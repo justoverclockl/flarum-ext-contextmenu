@@ -1,0 +1,12 @@
+flarum-ext-contextmenu:
+  admin:
+    link1title: Text for Link 1
+    link1desc: Insert the Text of your link 1
+    link2title: Text for Link 2 (footer)
+    link2desc: Insert the text of your link 2
+    link2urltitle: Url for Link 2
+    link2urldesc: Paste here the url for your link 2
+    link1urltitle: Url for link 1
+    link1urldesc: Paste here the url for your link 1
+  forum:
+    contactus: Contattaci

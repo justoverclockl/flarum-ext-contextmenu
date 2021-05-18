@@ -1,0 +1,41 @@
+{
+  "name": "justoverclock/flarum-ext-contextmenu",
+  "description": "Add a context menu on right click",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^0.1.0-beta.16"
+  },
+  "require-dev": {
+    "flarum/testing": "^0.1.0-beta.16"
+  },
+  "authors": [
+    {
+      "name": "Marco Colia",
+      "email": "info@flarum.it",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Justoverclock\\ContextMenu\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "ContextMenu",
+      "category": "",
+      "icon": {
+        "name": "far fa-list-alt",
+        "backgroundColor": "green",
+        "color": "white"
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
