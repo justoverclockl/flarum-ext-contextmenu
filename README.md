@@ -10,19 +10,18 @@ A [Flarum](http://flarum.org) extension. Add a context menu on righ click
 Install with composer:
 
 ```sh
-composer require justoverclock/flarum-ext-contextmenu:"*"
+composer require justoverclock/flarum-ext-contextmenu
 ```
 
 ### Updating
 
 ```sh
-composer update justoverclock/flarum-ext-contextmenu:"*"
-php flarum migrate
+composer update justoverclock/flarum-ext-contextmenu
 php flarum cache:clear
 ```
 
 ### Links
 
 - [Packagist](https://packagist.org/packages/justoverclock/flarum-ext-contextmenu)
-- [GitHub](https://github.com/justoverclock/flarum-ext-contextmenu)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [GitHub](https://github.com/justoverclockl/flarum-ext-contextmenu)
+
