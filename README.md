@@ -3,7 +3,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/justoverclock/flarum-ext-contextmenu.svg)](https://packagist.org/packages/justoverclock/flarum-ext-contextmenu) [![Total Downloads](https://img.shields.io/packagist/dt/justoverclock/flarum-ext-contextmenu.svg)](https://packagist.org/packages/justoverclock/flarum-ext-contextmenu)
 
-A [Flarum](http://flarum.org) extension. Add a context menu on righ click
+A [Flarum](http://flarum.org) extension. Add a context menu on right click
 
 ### Installation
 
