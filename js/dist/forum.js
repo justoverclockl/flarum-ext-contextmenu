@@ -91,7 +91,7 @@ module.exports =
 /*!******************!*\
   !*** ./forum.js ***!
   \******************/
-/*! no static exports found */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -195,23 +195,23 @@ Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_forum
   var menu = document.querySelector('.menu');
 
   function showMenu(x, y) {
-    menu.style.left = x + 'px';
+    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) menu.style.left = x + 'px';
     menu.style.top = y + 'px';
     menu.classList.add('menu-show');
   }
 
   function hideMenu() {
-    menu.classList.remove('menu-show');
+    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) menu.classList.remove('menu-show');
   }
 
   function onContextMenu(e) {
-    e.preventDefault();
+    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) e.preventDefault();
     showMenu(e.pageX, e.pageY);
     document.addEventListener('mouseup', onMouseUp, false);
   }
 
   function onMouseUp(e) {
-    hideMenu();
+    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) hideMenu();
     document.removeEventListener('mouseup', onMouseUp);
   }
 

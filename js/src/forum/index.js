@@ -2,6 +2,7 @@ import { extend } from 'flarum/common/extend';
 import app from 'flarum/app';
 import IndexPage from 'flarum/forum/components/IndexPage';
 
+
 app.initializers.add('justoverclock/flarum-ext-contextmenu', () => {
   extend(IndexPage.prototype, 'view', function (vdom) {
     if (vdom.children && vdom.children.splice) {
@@ -72,25 +73,30 @@ app.initializers.add('justoverclock/flarum-ext-contextmenu', () => {
   });
 });
 extend(IndexPage.prototype, 'oncreate', function () {
+
   const menu = document.querySelector('.menu');
 
   function showMenu(x, y) {
+    if (app.current.matches(IndexPage))
     menu.style.left = x + 'px';
     menu.style.top = y + 'px';
     menu.classList.add('menu-show');
   }
 
   function hideMenu() {
+    if (app.current.matches(IndexPage))
     menu.classList.remove('menu-show');
   }
 
   function onContextMenu(e) {
+    if (app.current.matches(IndexPage))
     e.preventDefault();
     showMenu(e.pageX, e.pageY);
     document.addEventListener('mouseup', onMouseUp, false);
   }
 
   function onMouseUp(e) {
+    if (app.current.matches(IndexPage))
     hideMenu();
     document.removeEventListener('mouseup', onMouseUp);
   }
