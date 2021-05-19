@@ -1,7 +1,12 @@
 import { extend } from 'flarum/common/extend';
 import app from 'flarum/app';
 import IndexPage from 'flarum/forum/components/IndexPage';
+import DiscussionPage from "flarum/forum/components/DiscussionPage";
+import Application from 'flarum/Application';
+import Page from 'flarum/components/Page';
 
+
+/* global m */
 
 app.initializers.add('justoverclock/flarum-ext-contextmenu', () => {
   extend(IndexPage.prototype, 'view', function (vdom) {
@@ -23,38 +28,27 @@ app.initializers.add('justoverclock/flarum-ext-contextmenu', () => {
         m(
           'li',
           { className: 'menu-item' },
-          m(
-            'a',
-            { href: 'https://www.facebook.com/flarumitaliaofficial' },
-            m('button', { className: 'menu-btn', type: 'button' }, [
+            m('a', { className: 'menu-btn', type: 'button', href: 'https://www.facebook.com/flarumitaliaofficial' }, [
               m('i', { className: 'fab fa-facebook-f' }),
               m('span', { className: 'menu-text' }, 'Facebook'),
             ])
-          )
         ),
         m(
           'li',
           { className: 'menu-item' },
-          m(
-            'a',
-            { href: 'https://twitter.com/flarumitalia' },
-            m('button', { className: 'menu-btn', type: 'button' }, [
+            m('a', { className: 'menu-btn', type: 'button', href: 'https://twitter.com/flarumitalia' }, [
               m('i', { className: 'fab fa-twitter' }),
               m('span', { className: 'menu-text' }, 'Twitter'),
             ])
-          )
+
         ),
         m(
           'li',
           { className: 'menu-item' },
-          m(
-            'a',
-            { href: 'https://github.com/justoverclockl' },
-            m('button', { className: 'menu-btn', type: 'button' }, [
+            m('a', { className: 'menu-btn', type: 'button', href: 'https://github.com/justoverclockl' }, [
               m('i', { className: 'fab fa-github-alt' }),
               m('span', { className: 'menu-text' }, 'Github'),
             ])
-          )
         ),
         m('li', { className: 'menu-separator' }),
         m(
@@ -77,26 +71,26 @@ extend(IndexPage.prototype, 'oncreate', function () {
   const menu = document.querySelector('.menu');
 
   function showMenu(x, y) {
-    if (app.current.matches(IndexPage))
+    if (!app.current.matches(DiscussionPage))
     menu.style.left = x + 'px';
     menu.style.top = y + 'px';
     menu.classList.add('menu-show');
   }
 
   function hideMenu() {
-    if (app.current.matches(IndexPage))
+    if (!app.current.matches(DiscussionPage))
     menu.classList.remove('menu-show');
   }
 
   function onContextMenu(e) {
-    if (app.current.matches(IndexPage))
+    if (!app.current.matches(DiscussionPage))
     e.preventDefault();
     showMenu(e.pageX, e.pageY);
     document.addEventListener('mouseup', onMouseUp, false);
   }
 
   function onMouseUp(e) {
-    if (app.current.matches(IndexPage))
+    if (!app.current.matches(DiscussionPage))
     hideMenu();
     document.removeEventListener('mouseup', onMouseUp);
   }

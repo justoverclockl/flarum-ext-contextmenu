@@ -116,8 +116,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/forum/components/IndexPage */ "flarum/forum/components/IndexPage");
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/forum/components/DiscussionPage */ "flarum/forum/components/DiscussionPage");
+/* harmony import */ var flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var flarum_Application__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/Application */ "flarum/Application");
+/* harmony import */ var flarum_Application__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_Application__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var flarum_components_Page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flarum/components/Page */ "flarum/components/Page");
+/* harmony import */ var flarum_components_Page__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flarum_components_Page__WEBPACK_IMPORTED_MODULE_5__);
 
 
+
+
+
+
+/* global m */
 
 flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('justoverclock/flarum-ext-contextmenu', function () {
   Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a.prototype, 'view', function (vdom) {
@@ -143,37 +154,34 @@ flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('justovercloc
       }), m('li', {
         className: 'menu-item'
       }, m('a', {
-        href: 'https://www.facebook.com/flarumitaliaofficial'
-      }, m('button', {
         className: 'menu-btn',
-        type: 'button'
+        type: 'button',
+        href: 'https://www.facebook.com/flarumitaliaofficial'
       }, [m('i', {
         className: 'fab fa-facebook-f'
       }), m('span', {
         className: 'menu-text'
-      }, 'Facebook')]))), m('li', {
+      }, 'Facebook')])), m('li', {
         className: 'menu-item'
       }, m('a', {
-        href: 'https://twitter.com/flarumitalia'
-      }, m('button', {
         className: 'menu-btn',
-        type: 'button'
+        type: 'button',
+        href: 'https://twitter.com/flarumitalia'
       }, [m('i', {
         className: 'fab fa-twitter'
       }), m('span', {
         className: 'menu-text'
-      }, 'Twitter')]))), m('li', {
+      }, 'Twitter')])), m('li', {
         className: 'menu-item'
       }, m('a', {
-        href: 'https://github.com/justoverclockl'
-      }, m('button', {
         className: 'menu-btn',
-        type: 'button'
+        type: 'button',
+        href: 'https://github.com/justoverclockl'
       }, [m('i', {
         className: 'fab fa-github-alt'
       }), m('span', {
         className: 'menu-text'
-      }, 'Github')]))), m('li', {
+      }, 'Github')])), m('li', {
         className: 'menu-separator'
       }), m('li', {
         className: 'menu-item'
@@ -195,28 +203,39 @@ Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_forum
   var menu = document.querySelector('.menu');
 
   function showMenu(x, y) {
-    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) menu.style.left = x + 'px';
+    if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3___default.a)) menu.style.left = x + 'px';
     menu.style.top = y + 'px';
     menu.classList.add('menu-show');
   }
 
   function hideMenu() {
-    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) menu.classList.remove('menu-show');
+    if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3___default.a)) menu.classList.remove('menu-show');
   }
 
   function onContextMenu(e) {
-    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) e.preventDefault();
+    if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3___default.a)) e.preventDefault();
     showMenu(e.pageX, e.pageY);
     document.addEventListener('mouseup', onMouseUp, false);
   }
 
   function onMouseUp(e) {
-    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a)) hideMenu();
+    if (!flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.current.matches(flarum_forum_components_DiscussionPage__WEBPACK_IMPORTED_MODULE_3___default.a)) hideMenu();
     document.removeEventListener('mouseup', onMouseUp);
   }
 
   document.addEventListener('contextmenu', onContextMenu, false);
 });
+
+/***/ }),
+
+/***/ "flarum/Application":
+/*!****************************************************!*\
+  !*** external "flarum.core.compat['Application']" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['Application'];
 
 /***/ }),
 
@@ -239,6 +258,28 @@ module.exports = flarum.core.compat['app'];
 /***/ (function(module, exports) {
 
 module.exports = flarum.core.compat['common/extend'];
+
+/***/ }),
+
+/***/ "flarum/components/Page":
+/*!********************************************************!*\
+  !*** external "flarum.core.compat['components/Page']" ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['components/Page'];
+
+/***/ }),
+
+/***/ "flarum/forum/components/DiscussionPage":
+/*!************************************************************************!*\
+  !*** external "flarum.core.compat['forum/components/DiscussionPage']" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = flarum.core.compat['forum/components/DiscussionPage'];
 
 /***/ }),
 
